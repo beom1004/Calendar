@@ -146,7 +146,7 @@ function renderCalendar(){
         "fas fa-child",
         "fas fa-flag",
         "fas fa-umbrella-beach",
-        "fas fa-temperature-high",
+        "fas fa-ice-cream",
         "fas fa-cookie",
         "fas fa-ghost",
         "fas fa-snowflake",
@@ -171,7 +171,7 @@ function renderCalendar(){
         table += `<tr>`;
         for (let j = 0; j < 7; j++) {
             if (i == 0 && j < firstDay.getDay()) {
-                table += `<td>&nbsp;</td>`;
+                table += `<td></td>`;
             } else if (currentDay <= totalDays) {
                 let cellStyle = "";
                 if(j==0){
@@ -186,7 +186,7 @@ function renderCalendar(){
                     table += `<td style="${cellStyle}">${currentDay++}</td>`;
                 }
             } else {
-                table += `<td>&nbsp;</td>`;
+                table += `<td></td>`;
             }
         }
         table += `</tr>`;
