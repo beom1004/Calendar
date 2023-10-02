@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(214, 212, 212);
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    min-width: 100%;
+    height: 550px;
+    margin: 70px 250px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.leftSide{
+    float: left;
+    width: 390px;
+    height: 100%;
+    background-color: rgb(46, 205, 111);
+    text-align: center;
+}
+#icon{
+    padding-top: 40px;
+    color: white;
+    background: none;
+    font-size: 70px;
+}
+.today{
+    position: absolute;
+    font-size: 30px;
+    margin-left: 160px;
+    margin-top: 70px;
+    background: none;
+    color: white;
+    font-weight: bold;
+}
+.icon{
+    position: absolute;
+    display: inline;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    margin-left: 630px;
+    margin-top: 480px;
+}
+#curDay{
+    font-family: 'Lilita One', cursive;
+    color: white;
+    display: inline-block;
+    font-size: 130px;
+    padding-top: 100px;
+    background: none;
+}
+#curDayOfWeek{
+    color: white;
+    display: inline-block;
+    font-size: 40px;
+    text-align: center;
+    padding-left: 10px;
+    background: none;
+}
+.rightSide{
+    position: relative;
+    float: left;
+    min-width: 700px;
+    height: 100%;
+    background-color: white;
+    border-radius: 0px 20px 20px 0px;
+}
+table {
+    position: absolute;
+    border-collapse: collapse;
+    font-size: 20px;
+    width: 560px;
+    height: 340px;
+    margin-top: 130px;
+    margin-left: 75px;
+}
+hr {
+    border: 1px solid lightgray;
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    width: 540px;
+}
+#monthList{
+    position: absolute;
+    list-style-type: none;
+    background-color: white;
+    padding-left: 0;
+    padding-top: 10px;
+    top: 80px;
+    left: 75px;
+
+}
+#monthList li{
+    background-color: white;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 6px;
+    padding: 0px;
+}
+th,
+td {
+    width: 80px ;
+    height: 30px;
+    border: none;
+    text-align: center;
+}
+th{
+    font-weight: bold;
+    color: rgb(186, 184, 184);
+    background: white;
+}
+td{
+    color: rgb(112, 110, 110);
+    background-color: white;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+td:hover{
+    color: white;
+    background-color: rgb(46, 205, 111);
+}
+.calendarHeader{
+    position: absolute;
+    width: 700px;
+    height: 80px;
+}
+.nav{
+    position: absolute;
+    overflow: hidden;
+    width: 700px;
+    height: 80px;
+    padding-top: 20px;
+    background-color: white;
+    border-radius: 0px 10px 0px 0px;
+}
+button{
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    font-size: 20px;
+}
+.go-prev{
+    position: absolute;
+    width: 40px;
+    right: 180px;
+    font-size: 25px;
+    color: rgb(186, 184, 184);
+    background: none;
+}
+.nav>.curYear{
+    font-family: 'Lilita One', cursive;
+    background-color: white;
+    position: absolute;
+    color: rgb(186, 184, 184);
+    width: 60px;
+    top: 23px;
+    right: 110px;
+    font-size: 25px;
+}
+.go-next{
+    position: absolute;
+    width: 40px;
+    right: 65px;
+    font-size: 25px;
+    color: rgb(186, 184, 184);
+    background: none;
+}
+.go-prev:hover{
+    background-color: rgb(162, 161, 161);
+    color: white;
+    cursor: pointer;
+}
+.go-today:hover{
+    background-color: rgb(162, 161, 161);
+    color: white;
+    cursor: pointer;
+}
+.go-next:hover{
+    background-color: rgb(162, 161, 161);
+    color: white;
+    cursor: pointer;
+}
+

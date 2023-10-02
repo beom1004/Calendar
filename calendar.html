@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calender Page</title>
+    <link href="calendar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftSide" id="leftSide">
+            <div class="today">Today</div>
+            <div class="curDay" id="curDay"></div><br>
+            <div class="curDayOfWeek" id="curDayOfWeek"></div><br>
+            <div class="icon" id="icon"></div>
+        </div>
+        <div class="rightSide">
+            <header class="calendarHeader">
+                <div class="nav">
+                    <button class="go-next" onclick="nextMonth()">&gt;</button>
+                    <div class="curYear" id="curYear"></div>
+                    <button class="go-prev" onclick="prevMonth()">&lt;</button>
+                </div>
+            </header>
+            <div class="calendarBody">
+                <ul id="monthList">
+                    <li>Jan</li>
+                    <li>Feb</li>
+                    <li>Mar</li>
+                    <li>Apr</li>
+                    <li>May</li>
+                    <li>Jun</li>
+                    <li>Jul</li>
+                    <li>Aug</li>
+                    <li>Sep</li>
+                    <li>Oct</li>
+                    <li>Nov</li>
+                    <li>Dec</li>
+                </ul>
+                <hr>
+                <div class="calendar" id="calendar"></div>
+                <img class="icon" alt="icon" src="https://www.w3schools.com/whatis/img_js.png" width="50px"
+                    height="50px">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
