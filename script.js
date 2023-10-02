@@ -87,7 +87,21 @@ function goToday(){
     year = now.getFullYear();
     month = now.getMonth();
     today = now.getDate();
+
     renderCalendar();
+
+    const monthList = document.getElementById("monthList");
+    const months = monthList.getElementsByTagName("li");
+
+    for(let i=0; i<months.length; i++){
+        months[i].style.fontWeight = "normal";
+        if(i == month){
+            months[month].style.color = "rgb(46, 205, 111)";
+            months[month].style.fontWeight = "bold";
+        }else{
+            months[i].style.color = "black";
+        }
+    }
 }
 
 function renderCalendar(){
@@ -165,7 +179,7 @@ function renderCalendar(){
                 }else if(j==6){
                     cellStyle="color: red;"
                 }
-                if (currentDay == today) {
+                if (currentDay == today && month == now.getMonth() && year == now.getFullYear()){
                     table += `<td style="background-color: rgb(46, 205, 111); color: white;
                     ${cellStyle}">${currentDay++}</td>`;
                 }else{
