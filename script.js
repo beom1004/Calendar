@@ -16,13 +16,19 @@ function initialize(){
     today = now.getDate();
     currentDay = 1;
     
+    let currentTime = getTime();
+    document.getElementById("watch").innerHTML = currentTime;
+    
     renderCalendar();
 }
-
 function getTime() {
     const now = new Date();
     let ampm;
     let hour = now.getHours();
+    let second = now.getSeconds();
+    if(second >= 0 && second <=9){
+        second = '0'+second;
+    }
     if (hour >= 12) {
         ampm = "PM";
         if (hour > 12) {
@@ -36,7 +42,7 @@ function getTime() {
 
     let minute = now.getMinutes();
     if (minute < 10) minute = '0' + minute;
-    return `${ampm} ${hour}:${minute}`;
+    return `${ampm} ${hour}:${minute}:${second}`;
 }
 function prevMonth(){
     if(month==0){
@@ -46,19 +52,7 @@ function prevMonth(){
         month--;
     }
     renderCalendar();
-
-    const monthList = document.getElementById("monthList");
-    const months = monthList.getElementsByTagName("li");
-
-    for(let i=0; i<months.length; i++){
-        months[i].style.fontWeight = "normal";
-        if(i == month){
-            months[month].style.color = "rgb(46, 205, 111)";
-            months[month].style.fontWeight = "bold";
-        }else{
-            months[i].style.color = "black";
-        }
-    }
+    updateMonthList();
 }
 function nextMonth(){
     if(month==11){
@@ -68,19 +62,7 @@ function nextMonth(){
         month++;
     }
     renderCalendar();
-
-    const monthList = document.getElementById("monthList");
-    const months = monthList.getElementsByTagName("li");
-
-    for(let i=0; i<months.length; i++){
-        months[i].style.fontWeight = "normal";
-        if(i == month){
-            months[month].style.color = "rgb(46, 205, 111)";
-            months[month].style.fontWeight = "bold";
-        }else{
-            months[i].style.color = "black";
-        }
-    }
+    updateMonthList();
 }
 function goToday(){
     const now = new Date();
@@ -89,7 +71,9 @@ function goToday(){
     today = now.getDate();
 
     renderCalendar();
-
+    updateMonthList();
+}
+function updateMonthList(){
     const monthList = document.getElementById("monthList");
     const months = monthList.getElementsByTagName("li");
 
@@ -103,8 +87,10 @@ function goToday(){
         }
     }
 }
-
 function renderCalendar(){
+    let currentTime = getTime();
+    document.getElementById("watch").innerHTML = currentTime;
+
     const now = new Date();
     firstDay = new Date(year, month, 1);
     currentDay = 1;
@@ -175,9 +161,9 @@ function renderCalendar(){
             } else if (currentDay <= totalDays) {
                 let cellStyle = "";
                 if(j==0){
-                    cellStyle="color: blue;";
-                }else if(j==6){
                     cellStyle="color: red;"
+                }else if(j==6){
+                    cellStyle="color: blue;"
                 }
                 if (currentDay == today && month == now.getMonth() && year == now.getFullYear()){
                     table += `<td style="background-color: rgb(46, 205, 111); color: white;
